@@ -1,0 +1,9 @@
+{
+    // Tell Code Runner how to build C++: include every .cpp in the folder
+    "code-runner.executorMap": {
+      "cpp": "g++ -std=c++17 *.cpp -o main && ./main"
+    },
+    // Run in the integrated terminal so you see input/output properly
+    "code-runner.runInTerminal": true
+  }
+  

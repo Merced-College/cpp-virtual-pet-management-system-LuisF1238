@@ -1,21 +1,29 @@
 #include <iostream>
-#include "Pet.h"
+#include <vector>
+
+#include "Dog.h"
+#include "Cat.h"
+#include "Dragon.h"
 
 int main() {
-    Pet pet1("Rex", "Dog", 3, 6);
-    Pet pet2("Whiskers", "Cat", 2, 4);
+    std::vector<Pet*> zoo;
 
-    std::cout << "Pet 1 Info:\n";
-    pet1.printInfo();
+    zoo.push_back(new Dog("Rex",       3, 6,  "Beagle"));
+    zoo.push_back(new Cat("Whiskers",  2, 4,  "String"));
+    zoo.push_back(new Dragon("Felix", 100, 2, 15.0, 90));
 
-    std::cout << "\nPet 2 Info:\n";
-    pet2.printInfo();
+    // Print info & sounds
+    for (Pet* p : zoo) {
+        std::cout << "-----\n";
+        p->printInfo();
+        p->makeSound();
+    }
 
-    std::cout << "\nComparing pets by name: ";
-    int result = pet1.compareTo(pet2);
-    if (result < 0) std::cout << pet1.getName() << " comes before " << pet2.getName() << "\n";
-    else if (result > 0) std::cout << pet1.getName() << " comes after " << pet2.getName() << "\n";
-    else std::cout << "Both pets have the same name.\n";
+    // Call a unique method on Dragon
+    std::cout << "-----\n";
+    static_cast<Dragon*>(zoo[2])->breatheFire();
 
+    // Cleanup
+    for (Pet* p : zoo) delete p;
     return 0;
 }

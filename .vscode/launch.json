@@ -6,28 +6,20 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/main",
-            "args": [
-
-                "-fdiagnostics-color=always",
-                "-g",
-                "/workspaces/cpp_virtualPet/main.cpp",
-                "/workspaces/cpp_virtualPet/Pet.cpp",
-                "-o",
-                "/workspaces/cpp_virtualPet/main"
-            ],
+            "args": [],                          // any runtime args can go here
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            "preLaunchTask": "build",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ],
-            "preLaunchTask": "build"
+            ]
         }
     ]
 }

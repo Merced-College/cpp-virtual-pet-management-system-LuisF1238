@@ -6,9 +6,13 @@
             "type": "shell",
             "command": "/usr/bin/g++",
             "args": [
+                "-std=c++17",
                 "-g",
                 "main.cpp",
                 "Pet.cpp",
+                "Dog.cpp",
+                "Cat.cpp",
+                "Dragon.cpp",
                 "-o",
                 "main"
             ],
@@ -17,7 +21,7 @@
                 "isDefault": true
             },
             "problemMatcher": ["$gcc"],
-            "detail": "Generated task by VS Code"
+            "detail": "Compile all .cpp files into main"
         }
     ]
 }
